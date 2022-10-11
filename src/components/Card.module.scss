@@ -1,0 +1,42 @@
+.game_wrap {
+  display: grid;
+  grid-template-columns: repeat(8, 80px);
+  grid-template-rows: repeat(4, 104px);
+  grid-gap: 15px;
+  margin-top: 108px;
+}
+
+.game__card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 25px;
+  border: 0.5px solid #cdcdcd;
+  border-radius: 8px;
+  
+
+  .number {
+    padding: 30px;
+    margin: 0;
+    transition: all 0.5s ease-out;
+  }
+
+  .unable {
+    opacity: 1;
+  }
+
+  .disable {
+    opacity: 0;
+  }
+}
+
+.choose_border {
+  box-shadow: 3px 3px 8px rgb(166 173 201);
+  border: 0.5px solid #ed5517;
+}
+
+.correct_border {
+  box-shadow: none;
+  border: 1px solid #0a0a0c;
+}
