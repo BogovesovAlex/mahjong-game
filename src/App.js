@@ -1,13 +1,14 @@
 import { Fragment } from 'react';
-import MainPage from './components/MainPage';
+import Card from "./components/Card";
 
 import './App.css';
 
 function App() {
   return (
-    <Fragment>
-      <MainPage />
-    </Fragment>
+    <div className="contaiter">
+        <h2>Mahjong</h2>
+        <Card />
+    </div>
 
   );
 }
