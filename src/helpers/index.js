@@ -12,15 +12,11 @@ const createObject = (arr) => {
 
 export const shuffle = array => array.sort(() => Math.random() - 0.5);
 
-export const primeNumberGenerator = (start = 2, end = 60, maxLength = 32) => {
-  let primeNumbers = [];
-  nextPrime: for (let i = start; i <= end; i++) {
-    for (let j = start; j < i; j++) {
-      if (i % j === 0) continue nextPrime;
-    }
-    if (primeNumbers.length >= maxLength) break;
-    primeNumbers.push(i);
-    primeNumbers.push(i);
-  }
+export const primeNumberGenerator = () => {
+  const prime = to => [...Array(to - 1).keys()].map(i => i + 2).filter(n =>
+    [...Array(n - 2).keys()].map(i => i + 2).reduce((acc, x) => acc && n % x !== 0, true));
+
+  const primeNumbers = [...prime(58), ...prime(58)];
+
   return createObject(primeNumbers);
 };

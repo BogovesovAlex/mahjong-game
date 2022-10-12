@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 
-import classes from './Card.module.scss'
+import classes from './Card.module.scss';
 
 const Card = () => {
   const dispatch = useDispatch();
   const [cardsArray, setCardAsrray] = useState([]);
 
   const cards = useSelector(state => state.cards.cards);
-  
+
   const cardHandler = event => dispatch({ type: 'SELECTED', payload: +event.target.id });
 
   useEffect(() => {
@@ -26,14 +26,14 @@ const Card = () => {
   if (selectedCard.length === 2 && selectedCard[0].number === selectedCard[1].number) {
     setTimeout(() => {
       dispatch({ type: 'CORRECT', payload: [selectedCard[0].id, selectedCard[1].id], correct: true });
-    }, 1000)
+    }, 1000);
 
   } else {
     setTimeout(() => {
       if (selectedCard.length >= 2 && selectedCard[0].number !== selectedCard[1].number) {
         dispatch({ type: 'CORRECT', payload: [selectedCard[0].id, selectedCard[1].id], correct: false });
       }
-    }, 500)
+    }, 500);
   }
 
   return (
