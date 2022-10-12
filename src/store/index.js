@@ -1,8 +1,7 @@
 import { createStore } from 'redux';
-import { primeNumberGenerator, shuffle } from '../helpers';
+import { primeNumberGenerator } from '../helpers';
 
 const arrayCards = primeNumberGenerator();
-shuffle(arrayCards.cards)
 
 const initialState = {
   cards: arrayCards
@@ -25,7 +24,7 @@ const messageReducer = (state = initialState, action) => {
           }),
         }
       }
-    case 'OPENED':
+    case 'HIDE':
       return {
         ...state,
         cards: {
