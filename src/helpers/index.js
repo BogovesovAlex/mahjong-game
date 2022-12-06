@@ -16,11 +16,11 @@ export const checkCardsForDispatch = (selectedCard, dispatch) => {
       dispatch({ type: 'CORRECT', payload: [selectedCard[0].id, selectedCard[1].id], correct: true });
     }, 1000);
   } else {
-    setTimeout(() => {
-      if (selectedCard.length >= 2 && selectedCard[0].number !== selectedCard[1].number) {
+    if (selectedCard.length >= 2 && selectedCard[0].number !== selectedCard[1].number) {
+      setTimeout(() => {
         dispatch({ type: 'CORRECT', payload: [selectedCard[0].id, selectedCard[1].id], correct: false });
-      }
-    }, 500);
+      }, 500);
+    };
   }
 }
 

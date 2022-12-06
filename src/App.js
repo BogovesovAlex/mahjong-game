@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import Card from "./components/Card";
 
 import './App.css';
@@ -9,7 +8,6 @@ function App() {
         <h2>Mahjong</h2>
         <Card />
     </div>
-
   );
 }
 
